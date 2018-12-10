@@ -1,24 +1,144 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Koz-RI-65s">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--RNDM-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainVC" customModule="Random" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" title="RNDM" id="mAR-JF-exF">
+                        <barButtonItem key="rightBarButtonItem" image="addThoughtIcon" id="weA-cT-2JJ">
+                            <connections>
+                                <segue destination="l8f-9m-rPg" kind="show" id="WbK-hL-9oY"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="940" y="-564"/>
+        </scene>
+        <!--Add ThoughtVC-->
+        <scene sceneID="njr-kR-Wns">
+            <objects>
+                <viewController id="l8f-9m-rPg" customClass="AddThoughtVC" customModule="Random" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gZK-Av-hpV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Yf5-lK-d3V">
+                                <rect key="frame" x="20" y="80" width="335" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="mc5-Fq-13x"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Funny"/>
+                                    <segment title="Serious"/>
+                                    <segment title="Crazy"/>
+                                </segments>
+                                <color key="tintColor" red="0.96889835599999996" green="0.58531731369999995" blue="0.026365375149999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="categoryChanged:" destination="l8f-9m-rPg" eventType="valueChanged" id="8fh-3R-VJ9"/>
+                                </connections>
+                            </segmentedControl>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vWS-6f-iac">
+                                <rect key="frame" x="20" y="126" width="335" height="20"/>
+                                <color key="textColor" red="0.21176470589999999" green="0.21176470589999999" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="SmK-sA-Cfn">
+                                <rect key="frame" x="20" y="162" width="335" height="100"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="0.14921339897260275" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="7Pb-9z-OaN"/>
+                                </constraints>
+                                <color key="textColor" red="0.21176470589999999" green="0.21176470589999999" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q07-1A-4cb">
+                                <rect key="frame" x="147.5" y="278" width="80" height="35"/>
+                                <color key="backgroundColor" red="0.96889835599999996" green="0.58531731369999995" blue="0.026365375149999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="j0k-zr-jnf"/>
+                                    <constraint firstAttribute="width" constant="80" id="vvW-hh-RrY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
+                                <state key="normal" title="Post">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="postBtnTapped:" destination="l8f-9m-rPg" eventType="touchUpInside" id="gp3-6a-Sag"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="SmK-sA-Cfn" firstAttribute="leading" secondItem="ZXv-mu-z9Q" secondAttribute="leading" constant="20" id="4lT-4r-kbg"/>
+                            <constraint firstItem="ZXv-mu-z9Q" firstAttribute="trailing" secondItem="vWS-6f-iac" secondAttribute="trailing" constant="20" id="9KR-QL-bZg"/>
+                            <constraint firstItem="ZXv-mu-z9Q" firstAttribute="trailing" secondItem="Yf5-lK-d3V" secondAttribute="trailing" constant="20" id="MUA-WC-Zxq"/>
+                            <constraint firstItem="Yf5-lK-d3V" firstAttribute="leading" secondItem="ZXv-mu-z9Q" secondAttribute="leading" constant="20" id="TtJ-Pv-cTL"/>
+                            <constraint firstItem="Yf5-lK-d3V" firstAttribute="top" secondItem="ZXv-mu-z9Q" secondAttribute="top" constant="16" id="VyI-yo-YDe"/>
+                            <constraint firstItem="vWS-6f-iac" firstAttribute="leading" secondItem="ZXv-mu-z9Q" secondAttribute="leading" constant="20" id="WBF-dn-0nJ"/>
+                            <constraint firstItem="Q07-1A-4cb" firstAttribute="top" secondItem="SmK-sA-Cfn" secondAttribute="bottom" constant="16" id="XWG-d9-Krz"/>
+                            <constraint firstItem="ZXv-mu-z9Q" firstAttribute="trailing" secondItem="SmK-sA-Cfn" secondAttribute="trailing" constant="20" id="bWh-Mn-J8v"/>
+                            <constraint firstItem="Q07-1A-4cb" firstAttribute="centerX" secondItem="gZK-Av-hpV" secondAttribute="centerX" id="kNw-Ax-Kul"/>
+                            <constraint firstItem="SmK-sA-Cfn" firstAttribute="top" secondItem="vWS-6f-iac" secondAttribute="bottom" constant="16" id="qPJ-kD-XYl"/>
+                            <constraint firstItem="vWS-6f-iac" firstAttribute="top" secondItem="Yf5-lK-d3V" secondAttribute="bottom" constant="16" id="uaq-UT-Hfj"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ZXv-mu-z9Q"/>
+                    </view>
+                    <connections>
+                        <outlet property="categorySegment" destination="Yf5-lK-d3V" id="S1b-Sc-OxC"/>
+                        <outlet property="postBtn" destination="Q07-1A-4cb" id="t2m-Mk-Yim"/>
+                        <outlet property="thoughtTxt" destination="SmK-sA-Cfn" id="AoW-xJ-ghq"/>
+                        <outlet property="usernameTxt" destination="vWS-6f-iac" id="fZ5-mL-qOC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DUo-OO-d5Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1709" y="-567"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="7Zw-tH-XSp">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Koz-RI-65s" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="uI4-wh-jx2">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.96889835599999996" green="0.58531731369999995" blue="0.026365375149999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.21176470588235294" green="0.21176470588235294" blue="0.21176470588235294" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.96889835599999996" green="0.58531731369999995" blue="0.026365375149999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="fVz-1b-cMB"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MxX-KO-od0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="133.59999999999999" y="-564.46776611694156"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="addThoughtIcon" width="21" height="24"/>
+    </resources>
 </document>
