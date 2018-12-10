@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		1C5BC323CB9B6F8889E7EB27 /* Pods_Random.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6B557C87A136D048107D6DA /* Pods_Random.framework */; };
 		E87D802A21BEDEF7002CA3E4 /* AddThoughtVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87D802921BEDEF7002CA3E4 /* AddThoughtVC.swift */; };
+		E87D802C21BEEAC2002CA3E4 /* ThoughtCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87D802B21BEEAC2002CA3E4 /* ThoughtCategory.swift */; };
+		E87D802F21BEF173002CA3E4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87D802E21BEF173002CA3E4 /* Constants.swift */; };
 		E8B7E34821BEB57200E25B0F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B7E34721BEB57200E25B0F /* AppDelegate.swift */; };
 		E8B7E34A21BEB57200E25B0F /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B7E34921BEB57200E25B0F /* MainVC.swift */; };
 		E8B7E34D21BEB57200E25B0F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8B7E34B21BEB57200E25B0F /* Main.storyboard */; };
@@ -22,6 +24,8 @@
 		A8927CD50017DAE2764C28F1 /* Pods-Random.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Random.release.xcconfig"; path = "Pods/Target Support Files/Pods-Random/Pods-Random.release.xcconfig"; sourceTree = "<group>"; };
 		B6B557C87A136D048107D6DA /* Pods_Random.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Random.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E87D802921BEDEF7002CA3E4 /* AddThoughtVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddThoughtVC.swift; sourceTree = "<group>"; };
+		E87D802B21BEEAC2002CA3E4 /* ThoughtCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThoughtCategory.swift; sourceTree = "<group>"; };
+		E87D802E21BEF173002CA3E4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E8B7E34421BEB57200E25B0F /* Random.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Random.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8B7E34721BEB57200E25B0F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E8B7E34921BEB57200E25B0F /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
@@ -64,6 +68,7 @@
 		E87D802621BECE05002CA3E4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E87D802B21BEEAC2002CA3E4 /* ThoughtCategory.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -82,6 +87,14 @@
 				E87D802921BEDEF7002CA3E4 /* AddThoughtVC.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		E87D802D21BEF154002CA3E4 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				E87D802E21BEF173002CA3E4 /* Constants.swift */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 		E8B7E33B21BEB57200E25B0F = {
@@ -105,6 +118,7 @@
 		E8B7E34621BEB57200E25B0F /* Random */ = {
 			isa = PBXGroup;
 			children = (
+				E87D802D21BEF154002CA3E4 /* Util */,
 				E87D802821BECE13002CA3E4 /* Controller */,
 				E87D802721BECE0C002CA3E4 /* View */,
 				E87D802621BECE05002CA3E4 /* Model */,
@@ -257,7 +271,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E87D802F21BEF173002CA3E4 /* Constants.swift in Sources */,
 				E87D802A21BEDEF7002CA3E4 /* AddThoughtVC.swift in Sources */,
+				E87D802C21BEEAC2002CA3E4 /* ThoughtCategory.swift in Sources */,
 				E8B7E34A21BEB57200E25B0F /* MainVC.swift in Sources */,
 				E8B7E34821BEB57200E25B0F /* AppDelegate.swift in Sources */,
 			);
