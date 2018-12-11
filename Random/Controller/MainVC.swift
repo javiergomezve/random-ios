@@ -16,6 +16,7 @@ class MainVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     private var thoughts = [Thought]()
     private var thoughtsCollectionRef: CollectionReference!
+    private var thoughtsListener: ListenerRegistration!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,12 +30,12 @@ class MainVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        thoughtsCollectionRef.getDocuments { (snapshot, err) in
+        thoughtsListener = thoughtsCollectionRef.addSnapshotListener { (snapshot, err) in
             if let err = err {
                 debugPrint("Error fetching docs: \(err)")
             } else {
                 guard let snap = snapshot else { return }
-
+                
                 for document in snap.documents {
                     let data = document.data()
                     let username = data[USERNAME] as? String ?? "Anonymous"
@@ -43,15 +44,19 @@ class MainVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
                     let numLikes = data[NUM_LIKES] as? Int ?? 0
                     let numComments = data[NUM_COMMENTS] as? Int ?? 0
                     let documentId = document.documentID
-
+                    
                     let newTought = Thought(username: username, timestamp: timestamp, thoughtTxt: thoughtTxt, numLikes: numLikes, numComments: numComments, documentId: documentId)
-
+                    
                     self.thoughts.append(newTought)
                 }
-
+                
                 self.tableView.reloadData()
             }
         }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        thoughtsListener.remove()
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
