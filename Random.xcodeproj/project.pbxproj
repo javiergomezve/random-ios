@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1C5BC323CB9B6F8889E7EB27 /* Pods_Random.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6B557C87A136D048107D6DA /* Pods_Random.framework */; };
+		E821BE8821C0AC9400EC08AD /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E821BE8721C0AC9400EC08AD /* LoginVC.swift */; };
+		E821BE8A21C0B08300EC08AD /* CreateUserVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E821BE8921C0B08300EC08AD /* CreateUserVC.swift */; };
 		E87D802A21BEDEF7002CA3E4 /* AddThoughtVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87D802921BEDEF7002CA3E4 /* AddThoughtVC.swift */; };
 		E87D802C21BEEAC2002CA3E4 /* ThoughtCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87D802B21BEEAC2002CA3E4 /* ThoughtCategory.swift */; };
 		E87D802F21BEF173002CA3E4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87D802E21BEF173002CA3E4 /* Constants.swift */; };
@@ -25,6 +27,8 @@
 		7402CCC7533A6A735D596139 /* Pods-Random.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Random.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Random/Pods-Random.debug.xcconfig"; sourceTree = "<group>"; };
 		A8927CD50017DAE2764C28F1 /* Pods-Random.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Random.release.xcconfig"; path = "Pods/Target Support Files/Pods-Random/Pods-Random.release.xcconfig"; sourceTree = "<group>"; };
 		B6B557C87A136D048107D6DA /* Pods_Random.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Random.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E821BE8721C0AC9400EC08AD /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		E821BE8921C0B08300EC08AD /* CreateUserVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserVC.swift; sourceTree = "<group>"; };
 		E87D802921BEDEF7002CA3E4 /* AddThoughtVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddThoughtVC.swift; sourceTree = "<group>"; };
 		E87D802B21BEEAC2002CA3E4 /* ThoughtCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThoughtCategory.swift; sourceTree = "<group>"; };
 		E87D802E21BEF173002CA3E4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -91,6 +95,8 @@
 			children = (
 				E8B7E34921BEB57200E25B0F /* MainVC.swift */,
 				E87D802921BEDEF7002CA3E4 /* AddThoughtVC.swift */,
+				E821BE8721C0AC9400EC08AD /* LoginVC.swift */,
+				E821BE8921C0B08300EC08AD /* CreateUserVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -279,9 +285,11 @@
 			files = (
 				E87D802F21BEF173002CA3E4 /* Constants.swift in Sources */,
 				E87D802A21BEDEF7002CA3E4 /* AddThoughtVC.swift in Sources */,
+				E821BE8821C0AC9400EC08AD /* LoginVC.swift in Sources */,
 				E87D802C21BEEAC2002CA3E4 /* ThoughtCategory.swift in Sources */,
 				E87D803121BEFE54002CA3E4 /* Thought.swift in Sources */,
 				E8B7E34A21BEB57200E25B0F /* MainVC.swift in Sources */,
+				E821BE8A21C0B08300EC08AD /* CreateUserVC.swift in Sources */,
 				E87D803321BF00B2002CA3E4 /* ThoughtCell.swift in Sources */,
 				E8B7E34821BEB57200E25B0F /* AppDelegate.swift in Sources */,
 			);
