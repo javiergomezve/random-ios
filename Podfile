@@ -8,4 +8,5 @@ target 'Random' do
   # Pods for Random
   pod 'Firebase/Core'
   pod 'Firebase/Firestore'
+  pod 'Firebase/Auth'
 end

@@ -18,6 +18,7 @@ class MainVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     private var thoughtsCollectionRef: CollectionReference!
     private var thoughtsListener: ListenerRegistration!
     private var categorySelected: String = ThoughtCategory.funny.rawValue
+    private var handle: AuthStateDidChangeListenerHandle?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +32,21 @@ class MainVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        setListener()
+        handle = Auth.auth().addStateDidChangeListener({ (auth, user) in
+            if user == nil {
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let loginVC = storyboard.instantiateViewController(withIdentifier: "loginVC")
+                self.present(loginVC, animated: true, completion: nil)
+            } else {
+                self.setListener()
+            }
+        })
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        if thoughtsListener != nil {
+            thoughtsListener.remove()
+        }
     }
     
     func setListener() {
@@ -65,10 +80,6 @@ class MainVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     func addThought(thought: Thought) {
         
     }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        thoughtsListener.remove()
-    }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return thoughts.count
@@ -98,6 +109,16 @@ class MainVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         thoughtsListener.remove()
         
         setListener()
+    }
+    
+    
+    @IBAction func logoutBtnTapped(_ sender: Any) {
+        let firebaseAuth = Auth.auth()
+        do {
+            try firebaseAuth.signOut()
+        } catch let signoutError as NSError {
+            debugPrint("Error signing out: \(signoutError)")
+        }
     }
 }
 

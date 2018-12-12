@@ -115,6 +115,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="RNDM" id="mAR-JF-exF">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="LjK-do-8yL">
+                            <connections>
+                                <action selector="logoutBtnTapped:" destination="BYZ-38-t0r" id="ROe-AY-vDP"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="addThoughtIcon" id="weA-cT-2JJ">
                             <connections>
                                 <segue destination="l8f-9m-rPg" kind="show" id="WbK-hL-9oY"/>
@@ -215,7 +220,7 @@
         <!--LoginVC-->
         <scene sceneID="bfv-J0-gk7">
             <objects>
-                <viewController id="BEf-cp-9e1" customClass="LoginVC" customModule="Random" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="loginVC" id="BEf-cp-9e1" customClass="LoginVC" customModule="Random" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3hR-et-WtP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -271,6 +276,9 @@
                                 <state key="normal" title="Create user">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <segue destination="nkb-1S-tSE" kind="show" id="39u-dQ-8IK"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
