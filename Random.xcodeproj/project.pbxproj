@@ -22,6 +22,7 @@
 		E8B7E34F21BEB57400E25B0F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8B7E34E21BEB57400E25B0F /* Assets.xcassets */; };
 		E8B7E35221BEB57400E25B0F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8B7E35021BEB57400E25B0F /* LaunchScreen.storyboard */; };
 		E8B7E35A21BEB81200E25B0F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E8B7E35921BEB81200E25B0F /* GoogleService-Info.plist */; };
+		E8D2AE6F21C2C6E600DE66C2 /* KeyboardBoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D2AE6E21C2C6E600DE66C2 /* KeyboardBoundView.swift */; };
 		E8F2A49D21C194D5000E430F /* CommentsVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F2A49C21C194D5000E430F /* CommentsVc.swift */; };
 		E8F2A49F21C19D69000E430F /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F2A49E21C19D69000E430F /* CommentCell.swift */; };
 /* End PBXBuildFile section */
@@ -46,6 +47,7 @@
 		E8B7E35121BEB57400E25B0F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E8B7E35321BEB57400E25B0F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E8B7E35921BEB81200E25B0F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E8D2AE6E21C2C6E600DE66C2 /* KeyboardBoundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardBoundView.swift; sourceTree = "<group>"; };
 		E8F2A49C21C194D5000E430F /* CommentsVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsVc.swift; sourceTree = "<group>"; };
 		E8F2A49E21C19D69000E430F /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -113,6 +115,7 @@
 		E87D802D21BEF154002CA3E4 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				E8D2AE6E21C2C6E600DE66C2 /* KeyboardBoundView.swift */,
 				E87D802E21BEF173002CA3E4 /* Constants.swift */,
 			);
 			path = Util;
@@ -298,6 +301,7 @@
 				E87D802A21BEDEF7002CA3E4 /* AddThoughtVC.swift in Sources */,
 				E821BE8821C0AC9400EC08AD /* LoginVC.swift in Sources */,
 				E8F2A49F21C19D69000E430F /* CommentCell.swift in Sources */,
+				E8D2AE6F21C2C6E600DE66C2 /* KeyboardBoundView.swift in Sources */,
 				E87D802C21BEEAC2002CA3E4 /* ThoughtCategory.swift in Sources */,
 				E8F2A49D21C194D5000E430F /* CommentsVc.swift in Sources */,
 				E87D803121BEFE54002CA3E4 /* Thought.swift in Sources */,

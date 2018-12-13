@@ -31,7 +31,7 @@ class Comment {
             let data = document.data()
             let username = data[USERNAME] as? String ?? "Anonymous"
             let timestamp = data[TIMESTAMP] as? Date ?? Date()
-            let commentTxt = data["commentTxt"] as? String ?? "commentTxt"
+            let commentTxt = data[COMMENT_TXT] as? String ?? ""
             let documentId = document.documentID
             
             let newComment = Comment(username: username, timestamp: timestamp, commentTxt: commentTxt, documentId: documentId)
