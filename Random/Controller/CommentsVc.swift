@@ -84,7 +84,8 @@ class CommentsVc: UIViewController, UITableViewDelegate, UITableViewDataSource {
             transaction.setData([
                 COMMENT_TXT: commentTxt,
                 USERNAME: self.username,
-                TIMESTAMP: FieldValue.serverTimestamp()
+                TIMESTAMP: FieldValue.serverTimestamp(),
+                USER_ID: Auth.auth().currentUser?.uid ?? ""
             ], forDocument: newCommentRef)
             
             return nil
