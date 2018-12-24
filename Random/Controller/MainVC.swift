@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class MainVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class MainVC: UIViewController, UITableViewDataSource, UITableViewDelegate, ThoughtDelegate {
 
     @IBOutlet private weak var segmentControl: UISegmentedControl!
     @IBOutlet private weak var tableView: UITableView!
@@ -87,7 +87,7 @@ class MainVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "thoughtCell", for: indexPath) as? ThoughtCell {
-            cell.configureCell(thought: thoughts[indexPath.row])
+            cell.configureCell(thought: thoughts[indexPath.row], delegate: self)
             return cell
         } else {
             return UITableViewCell()
@@ -133,6 +133,11 @@ class MainVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         } catch let signoutError as NSError {
             debugPrint("Error signing out: \(signoutError)")
         }
+    }
+    
+    func thoughtOptionsTapped(thought: Thought) {
+        // TODO: Create alert to handle deletion.
+        print(thought.username)
     }
 }
 

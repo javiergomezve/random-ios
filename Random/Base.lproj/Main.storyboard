@@ -83,8 +83,12 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ellipsis" translatesAutoresizingMaskIntoConstraints="NO" id="RkU-Rq-LO6">
+                                                    <rect key="frame" x="330" y="18" width="30" height="30"/>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="RkU-Rq-LO6" firstAttribute="trailing" secondItem="viV-hy-oMD" secondAttribute="trailingMargin" id="08n-qo-eS5"/>
                                                 <constraint firstItem="wcM-tN-wYn" firstAttribute="leading" secondItem="viV-hy-oMD" secondAttribute="leadingMargin" constant="10" id="5CL-6N-5F0"/>
                                                 <constraint firstItem="lqS-Xg-4Dl" firstAttribute="centerY" secondItem="fo8-l4-Y7z" secondAttribute="centerY" id="9wx-me-aOs"/>
                                                 <constraint firstItem="Zjg-fK-sek" firstAttribute="leading" secondItem="lqS-Xg-4Dl" secondAttribute="trailing" constant="10" id="BeW-eA-6rI"/>
@@ -92,6 +96,7 @@
                                                 <constraint firstItem="fo8-l4-Y7z" firstAttribute="leading" secondItem="wcM-tN-wYn" secondAttribute="trailing" constant="10" id="IQF-f9-Lec"/>
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="fo8-l4-Y7z" secondAttribute="trailing" constant="20" symbolic="YES" id="JW2-6I-C1k"/>
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="3TJ-JH-snU" secondAttribute="trailing" constant="20" symbolic="YES" id="NIs-e4-TDa"/>
+                                                <constraint firstItem="RkU-Rq-LO6" firstAttribute="centerY" secondItem="3TJ-JH-snU" secondAttribute="centerY" id="NlO-QH-qUa"/>
                                                 <constraint firstItem="3TJ-JH-snU" firstAttribute="leading" secondItem="abZ-U9-jZn" secondAttribute="trailing" constant="10" id="Qlj-hU-hsG"/>
                                                 <constraint firstItem="lqS-Xg-4Dl" firstAttribute="leading" secondItem="fo8-l4-Y7z" secondAttribute="trailing" constant="10" id="Qr2-53-ff7"/>
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="bX9-fE-0nH" secondAttribute="trailing" constant="20" symbolic="YES" id="SRB-CQ-D2h"/>
@@ -108,6 +113,7 @@
                                             <outlet property="commentIcon" destination="lqS-Xg-4Dl" id="cCK-Qf-LuT"/>
                                             <outlet property="numCommentsLbl" destination="Zjg-fK-sek" id="eII-wZ-vMa"/>
                                             <outlet property="numLikesLbl" destination="fo8-l4-Y7z" id="rsI-Rh-HCx"/>
+                                            <outlet property="optionsMenu" destination="RkU-Rq-LO6" id="0hk-NW-9ny"/>
                                             <outlet property="starIconImg" destination="wcM-tN-wYn" id="TPs-PJ-ieN"/>
                                             <outlet property="thoughtTxtLbl" destination="bX9-fE-0nH" id="IBv-de-Gmh"/>
                                             <outlet property="timestampLbl" destination="3TJ-JH-snU" id="SnH-LL-cEd"/>
@@ -188,19 +194,25 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="ellipsis_dark" translatesAutoresizingMaskIntoConstraints="NO" id="Npv-GB-zHw">
+                                                    <rect key="frame" x="330" y="25" width="30" height="22"/>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="bottomMargin" secondItem="VKV-Mt-h5d" secondAttribute="bottom" constant="10" id="5rl-Zg-N2x"/>
+                                                <constraint firstItem="Npv-GB-zHw" firstAttribute="trailing" secondItem="7Mj-Qh-MPO" secondAttribute="trailingMargin" id="Gd7-Ug-ZQF"/>
                                                 <constraint firstItem="VKV-Mt-h5d" firstAttribute="top" secondItem="DmG-B6-pxd" secondAttribute="bottom" constant="10" id="Hgx-Mi-7rh"/>
                                                 <constraint firstItem="T8v-Lg-wwp" firstAttribute="leading" secondItem="DmG-B6-pxd" secondAttribute="trailing" constant="10" id="NG2-I5-ivJ"/>
                                                 <constraint firstItem="VKV-Mt-h5d" firstAttribute="leading" secondItem="7Mj-Qh-MPO" secondAttribute="leadingMargin" constant="10" id="dTq-p2-JGS"/>
                                                 <constraint firstItem="DmG-B6-pxd" firstAttribute="top" secondItem="7Mj-Qh-MPO" secondAttribute="topMargin" constant="10" id="mlB-5r-Tf3"/>
                                                 <constraint firstItem="DmG-B6-pxd" firstAttribute="leading" secondItem="7Mj-Qh-MPO" secondAttribute="leadingMargin" constant="10" id="rmk-Ia-n8q"/>
+                                                <constraint firstItem="Npv-GB-zHw" firstAttribute="centerY" secondItem="T8v-Lg-wwp" secondAttribute="centerY" id="u5n-Of-6PX"/>
                                                 <constraint firstItem="T8v-Lg-wwp" firstAttribute="centerY" secondItem="DmG-B6-pxd" secondAttribute="centerY" id="vxR-ag-eHa"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="commentLbl" destination="VKV-Mt-h5d" id="rWV-GM-yp0"/>
+                                            <outlet property="optionsMenu" destination="Npv-GB-zHw" id="WY8-OZ-6wO"/>
                                             <outlet property="timestampLbl" destination="T8v-Lg-wwp" id="vwH-fy-QyH"/>
                                             <outlet property="usernameLbl" destination="DmG-B6-pxd" id="uEd-VS-MrC"/>
                                         </connections>
@@ -556,6 +568,8 @@
     <resources>
         <image name="addThoughtIcon" width="21" height="24"/>
         <image name="commentIcon" width="26" height="22"/>
+        <image name="ellipsis" width="30" height="30"/>
+        <image name="ellipsis_dark" width="30" height="30"/>
         <image name="starIconFilled" width="20" height="19"/>
     </resources>
 </document>
