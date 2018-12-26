@@ -136,8 +136,56 @@ class MainVC: UIViewController, UITableViewDataSource, UITableViewDelegate, Thou
     }
     
     func thoughtOptionsTapped(thought: Thought) {
-        // TODO: Create alert to handle deletion.
-        print(thought.username)
+        let alert = UIAlertController(title: "Delete", message: "Delete thoought", preferredStyle: .actionSheet)
+        
+        let deleteAction = UIAlertAction(title: "Delete thought", style: .default) { (action) in
+            
+            self.delete(collection: Firestore.firestore().collection(THOUGHTS_REF).document(thought.documentId).collection(COMMENTS_REF), completion: { (error) in
+                if let error = error {
+                    debugPrint("Could not delete thought: \(error.localizedDescription)")
+                } else {
+                    Firestore.firestore().collection(THOUGHTS_REF).document(thought.documentId)
+                        .delete(completion: { (error) in
+                            if let error = error {
+                                debugPrint("Could not delete thought: \(error.localizedDescription)")
+                            } else {
+                                alert.dismiss(animated: true, completion: nil)
+                            }
+                        })
+                }
+            })
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        
+        alert.addAction(deleteAction)
+        alert.addAction(cancelAction)
+        present(alert, animated: true, completion: nil)
+    }
+    
+    func delete(collection: CollectionReference, batchSize: Int = 100, completion: @escaping (Error?) -> ()) {
+        collection.limit(to: batchSize).getDocuments { (docset, error) in
+            guard let docset = docset else {
+                completion(error)
+                return
+            }
+            
+            guard docset.count > 0 else {
+                completion(nil)
+                return
+            }
+            
+            let batch = collection.firestore.batch()
+            docset.documents.forEach { batch.deleteDocument($0.reference) }
+            
+            batch.commit { (batchError) in
+                if let batchError = batchError {
+                    completion(batchError)
+                } else {
+                    self.delete(collection: collection, batchSize: batchSize, completion: completion)
+                }
+            }
+        }
     }
 }
 
